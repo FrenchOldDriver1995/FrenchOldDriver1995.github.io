@@ -1,10 +1,69 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-    <meta http-equiv="content-type" content="text/html;charset=utf-8"/>
-    <title>欢迎来到tschueng的博客</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>githubTemplate</title>
+    <link rel="stylesheet" href="">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 </head>
+
 <body>
-<p>世界上没有那么多新闻</p>
+
+    <div id="app">
+        <h1>欢迎来到tscheung的博客主页</h1>
+        <h3><h3 v-color="'red'" v-fontweight="800" v-fontsize="20">现在是 北京时间 {{  dt | dateFormat('')}}  星期 {{week}}</h3></h3>
+    </div>
+    <script>
+
+    var vm=new Vue({
+            el:"#app",
+
+            data:{
+                dt:new Date(),
+                week : new Date().getDay()
+            },
+            methods:{
+
+            },
+            filters:{//定义私有过滤器 有两个条件 【过滤器名称 和 处理函数】
+                dateFormat : function(dateStr, pattern=''){
+                    var dt = new Date(dateStr)
+                    //yyyy-mm-dd
+                    var y =dt.getFullYear()
+                    var m=(dt.getMonth() + 1).toString().padStart(2,'0')
+                    var d=dt.getDate().toString().padStart(2,'0')
+                    
+                    
+
+                    if(pattern.toLowerCase()=='yyyy-mm-dd'){
+                        return `${y}-${m}-${d}`
+                    }else {
+                        var h=dt.getHours().toString().padStart(2,'0')
+                        var mi = dt.getMinutes().toString().padStart(2,'0')
+                        var s=dt.getSeconds().toString().padStart(2,'0')
+
+                        return `${y}-${m}-${d} ${h}:${mi}:${s} +++`
+                    }
+                }
+            },
+
+            directives:{ //自定义私有指令
+                'fontweight' :{
+                    bind: function(el, binding){
+                        el.style.fontWeight = binding.value
+                    }
+                }  ,
+                'fontsize':function(el, binding){ //对于针对bind或者update钩子函数的操作，可以这样简写，这就同时写了两个钩子函数
+                    el.style.fontSize= parseInt(binding.value)+'px' //曾强代码的健壮性
+                }
+            }
+        })
+
+    
+    </script>
 </body>
+
 </html>
