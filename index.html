@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -8,95 +8,597 @@
     <title>githubTemplate</title>
     <link rel="stylesheet" href="">
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-    <body style="background-image: url(./res/paris.jpg); background-size: 100%;">
+    
     </body>
 </head>
 
 <body>
-        <!-- <article class="wrap">
-                <header>
-                    <div class="bg-img">
-                        <img src="./res/paris.jpg" >
-                    </div>
-                </header>
-            </article> -->
+
+
+    <body style="background-image: url(./res/paris.jpg); background-size: 100%;"></body>
     <div id="app">
-        <h1>欢迎来到tscheung的博客主页</h1>
+        <h1>欢迎来到Tscheung的博客主页</h1>
         <h3><h3 v-color="'red'" v-fontweight="800" v-fontsize="20">现在是 北京时间 {{  dt | dateFormat('')}}  星期 {{week}}</h3></h3>
         <p>{{msg}}</p>
         <input type="button" value="点击这里" @click="lang">
         <a href="http://www.baidu.com">跳转到百度</a>
         <a href="http://www.taobao.com">跳转到淘宝</a>
     </div>
-    <script>
-
-    var vm=new Vue({
-            el:"#app",
-
-            data:{
-                dt:new Date(),
-                week : new Date().getDay(),
-                msg: '我爱李沙蔓小乖乖',
-                intervalId: null
-            },
-            created(){
-                this.lang()
-            },
-            methods:{
-                lang(){
-                // console.log(this.msg)
-                //获取到头的第一格字符
-                if(this.intervalId!=null)return;
-                var _this = this
-
-                //这里可以简写成setInterval( () => {
-                this.intervalId = setInterval(function(){
-                    var start = _this.msg.substring(0, 1)
-                    //获取到后面的所有字符
-                    var end = _this.msg.substring(1)
-                    //重新拼接得到新的字符串，并赋值给 _this.msg
-                    _this.msg = end + start
-                }, 400)
-                //VM实例会监听自己的所有改变,只要一发生改动就会自动把最新的数据从data上同步到页面中去
-                //【好处： 程序员只需要关心数据，不需要考虑如何重新渲染DOM】
-                },
-            },
-            filters:{//定义私有过滤器 有两个条件 【过滤器名称 和 处理函数】
-                dateFormat : function(dateStr, pattern=''){
-                    var dt = new Date(dateStr)
-                    //yyyy-mm-dd
-                    var y =dt.getFullYear()
-                    var m=(dt.getMonth() + 1).toString().padStart(2,'0')
-                    var d=dt.getDate().toString().padStart(2,'0')
-                    
-                    
-
-                    if(pattern.toLowerCase()=='yyyy-mm-dd'){
-                        return `${y}-${m}-${d}`
-                    }else {
-                        var h=dt.getHours().toString().padStart(2,'0')
-                        var mi = dt.getMinutes().toString().padStart(2,'0')
-                        var s=dt.getSeconds().toString().padStart(2,'0')
-
-                        return `${y}-${m}-${d} ${h}:${mi}:${s} +++`
-                    }
-                }
-            },
-
-            directives:{ //自定义私有指令
-                'fontweight' :{
-                    bind: function(el, binding){
-                        el.style.fontWeight = binding.value
-                    }
-                }  ,
-                'fontsize':function(el, binding){ //对于针对bind或者update钩子函数的操作，可以这样简写，这就同时写了两个钩子函数
-                    el.style.fontSize= parseInt(binding.value)+'px' //曾强代码的健壮性
-                }
-            }
-        })
-
-    
-    </script>
+    <script src="./main.js"></script>
 </body>
 
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Home</title>
+<!-- for-mobile-apps -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="" />
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
+		function hideURLbar(){ window.scrollTo(0,1); } </script>
+<!-- //for-mobile-apps -->
+<link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+<link href="css/font-awesome.min.css" rel="stylesheet" type="text/css" media="all">
+<link rel="stylesheet" href="css/chocolat.css" type="text/css" media="screen">
+<link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
+<!--fonts-->
+<link href="http://fonts.googleapis.com/css?family=Noto+Sans:400,700" rel="stylesheet">
+<link href="http://fonts.googleapis.com/css?family=Lato:300,400,700,900" rel="stylesheet">
+<!--//fonts-->
+
+</head>
+<body>
+<!--Header-->
+	<div class="header" id="home">
+		<!--Top-Bar-->
+				<div class="top-bar">
+				<div class="container-fluid">
+					<div class="header-nav">
+						<nav class="navbar navbar-default">
+							<!-- Brand and toggle get grouped for better mobile display -->
+							<div class="navbar-header">
+								<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+									<span class="sr-only">Toggle navigation</span>
+									<span class="icon-bar"></span>
+									<span class="icon-bar"></span>
+									<span class="icon-bar"></span>
+								</button>
+								<h1><a class="navbar-brand" href="index.html">Trade <span>Zone</span></a></h1>
+							</div>
+							<!-- Collect the nav links, forms, and other content for toggling -->
+							<div class="collapse navbar-collapse nav-wil" id="bs-example-navbar-collapse-1">
+								<nav class="cl-effect-15" id="cl-effect-15">
+								<ul>
+									<li><a href="#home" class="active" data-hover="Home">Home</a></li>
+									<li><a href="#about" class="scroll" data-hover="About">About</a></li>
+									<li><a href="#services" class="scroll" data-hover="Services">Services</a></li>
+									<li><a href="#team" class="scroll" data-hover="Team">Team</a></li>
+									<li><a href="#projects" class="scroll" data-hover="Projects">Projects</a></li>
+									<li><a href="#contact" class="scroll" data-hover="Contact">Contact</a></li>
+								</ul>
+								</nav>
+							</div>
+							<div class="agileits-contact-info text-right">
+							<ul>
+								<li><span class="glyphicon glyphicon-earphone" aria-hidden="true"></span>+040 185 999</li>
+							</ul>
+						</div>
+						</nav>
+						<div class="w3ls_search">
+													<div class="cd-main-header">
+														<ul class="cd-header-buttons">
+															<li><a class="cd-search-trigger" href="#cd-search"> <span></span></a></li>
+														</ul> <!-- cd-header-buttons -->
+													</div>
+													<div id="cd-search" class="cd-search">
+														<form action="#" method="post">
+															<input name="Search" type="search" placeholder="Search...">
+														</form>
+													</div>
+												</div>
+					</div>
+					</div>
+			</div>
+		<!--//Top-Bar-->
+		<!--Slider-->
+		<div class="slider">
+			<div class="callbacks_container">
+				<ul class="rslides" id="slider">
+					<li>
+						<div class="slider-img">
+							<img src="images/bann2.jpg" class="img-responsive" alt="Trade Zone">
+						</div>
+						<div class="slider-info">
+							<img src="images/logo1.png" class="img-responsive" alt="logo">
+							<h3>Lorem ipsum dolor sit amet</h3>
+						    <p>Lorem ipsum dolor amet, consectetur adipiscing elit.</p>
+						</div>
+					</li>
+					<li>
+						<div class="slider-img">
+							<img src="images/bann1.jpg" class="img-responsive" alt="Trade Zone">
+						</div>
+						<div class="slider-info">
+							<img src="images/logo1.png" class="img-responsive" alt="logo">
+							<h3>Quis nostrud exercitation </h3>
+							<p>Curabitur laoreet Nunc condimentum laoreet.</p>
+						</div>
+					</li>
+					<li>
+						<div class="slider-img">
+							<img src="images/bann2.jpg" class="img-responsive" alt="Trade Zone">
+						</div>
+						<div class="slider-info">
+							<img src="images/logo1.png" class="img-responsive" alt="logo">
+							<h3>Cupidatat non proident sunt</h3>
+							<p>Lorem ipsum dolor amet, consectetur adipiscing elit.</p>
+						</div>
+					</li>
+					<li>
+						<div class="slider-img">
+							<img src="images/bann1.jpg" class="img-responsive" alt="Trade Zone">
+						</div>
+						<div class="slider-info">
+							<img src="images/logo1.png" class="img-responsive" alt="logo">
+							<h3>Quis autem eum reprehenderit.</h3>
+							<p>Curabitur laoreet Nunc condimentum laoreet.</p>
+						</div>
+					</li>
+
+				</ul>
+				
+			</div>
+			<div class="clearfix"></div>
+		</div>
+		<div class="readmore-w3"><a class="readmore" href="#" data-toggle="modal" data-target="#myModal1">Read More</a></div>
+		<div class="modal fade" id="myModal1" tabindex="-1" role="dialog">
+						<!-- Modal1 -->
+							<div class="modal-dialog">
+							<!-- Modal content-->
+								<div class="modal-content">
+									<div class="modal-header">
+										<button type="button" class="close" data-dismiss="modal">&times;</button>
+										<h4>Trade Zone</h4>
+										<img src="images/bann2.jpg" alt=" " class="img-responsive">
+										<h5>Lorem Ipsum</h5>
+										<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting.</p>
+									</div>
+								</div>
+							</div>
+						</div>
+						<!-- //Modal1 -->
+		<!--//Slider-->
+	</div>
+<!--//Header-->
+<!-- about -->
+	<div class="about" id="about">
+		<div class="container">
+					<h3 class="tittle">About Us</h3>
+						<p class="title-para-w3-agileits">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+						<div class="w3l-grids-about">
+								<div class="col-md-5 w3ls-ab-right">
+									<div class="agile-about-right-img">
+									</div>
+								</div>
+								<div class="col-md-7 w3ls-agile-left">
+									<h2>Donec lobortis pharetra dolor</h2>
+									<p>Lorem ipsum dolor sit amet, consectetur adipisc elit. Proin ultricies vestibulum velit.Lorem ipsum dolor sit amet.Nam aliquam pretium feugiat. Duis sem est, viverra eu interdum ac, suscipit nec mauris. Suspendisse commodo tempor sagittis,Lorem ipsum dolor sit amet, consectetur adipisc elit. Proin ultricies vestibulum velit.Lorem ipsum dolor sit amet.Nam aliquam pretium feugiat</p>
+									
+										<a href="#" data-toggle="modal" data-target="#myModal2" class="read">Read More</a>
+								</div>
+								<div class="clearfix"> </div>
+			 				</div>
+			   </div>
+		</div>
+<!-- //about-bottom -->
+<!-- Modal1 -->
+													<div class="modal fade" id="myModal2" tabindex="-1" role="dialog">
+														<div class="modal-dialog">
+														<!-- Modal content-->
+															<div class="modal-content">
+																<div class="modal-header">
+																	<button type="button" class="close" data-dismiss="modal">&times;</button>
+																	<h4>Trade Zone</h4>
+																	<img src="images/5.jpg" alt=" " class="img-responsive">
+																	<h5>Donec lobortis pharetra dolor</h5>
+																	<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, rds which don't look even slightly believable..</p>
+																</div>
+															</div>
+														</div>
+													</div>
+													<!-- //Modal1 -->
+<!--sevices-->
+<div class="sevices-w3layouts" id="services">
+	<div class="container">
+		<div class="sevices-header-agile">
+			<h3 class="tittle">Services</h3>
+			<p class="title-para-w3-agileits">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+		</div>
+			<div class="row">
+				<div class="col-md-4 sevices-grid ">
+					<div class="icon">
+						<i class="fa fa-briefcase" aria-hidden="true"></i>
+					<h4>Lorem ipsum</h4>
+					</div>
+					<p class="para-agileits">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris ut metus sit amet magna vehicula eleifend in in urna.</p>
+					
+				</div>
+			<div class="col-md-4 sevices-grid ">
+					<div class="icon">
+						<i class="fa fa-thumbs-up" aria-hidden="true"></i>
+					<h4>Lorem ipsum</h4>
+					</div>
+					<p class="para-agileits">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris ut metus sit amet magna vehicula eleifend in in urna.</p>
+						</div>
+				<div class="col-md-4 sevices-grid ">
+					<div class="icon">
+						<i class="fa fa-users" aria-hidden="true"></i>
+						<h4>Lorem ipsum</h4>
+					</div>
+					<p class="para-agileits">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris ut metus sit amet magna vehicula eleifend in in urna.</p>
+						</div>
+				<div class="clearfix"></div>
+			</div>
+			<div class="banner-btm-agileits-w3layouts">
+				<div class="col-md-6 sevices-wthree ">
+					<h3>16</h3>
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+				</div>
+				<div class="col-md-6 sevices-wthree ">
+					<h3>200</h3>
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+				</div>
+			</div>
+	</div>
+</div>
+<!--//sevices-->
+<!-- team -->
+	<div class="team" id="team">
+		<div class="container">
+			<h3 class="tittle">Meet Our Team</h3>
+			<p class="title-para-w3-agileits">Vestibulum commodo urna sit amet volutpat.</p>
+			<div class="agile_team_grids">
+				<div class="col-md-3 agile_team_grid">
+					<div class="agile_team_grid_main">
+						<img src="images/t1.jpg" alt=" " class="img-responsive" />
+					</div>
+					<div class="agile_team_grid1">
+						
+								<label class="team-bar-w3"></label><h4>Linda Carl</h4><label class="team-bar-w3"></label>
+							
+									   <p class="para-agileits">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. </p>
+											<ul class="top-icons team-icon">
+												<li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+												<li><a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
+												<li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+												<li><a href="#"><i class="fa fa-pinterest-p" aria-hidden="true"></i></a></li>
+											</ul>
+					</div>
+				</div>
+				<div class="col-md-3 agile_team_grid">
+					<div class="agile_team_grid_main">
+						<img src="images/t2.jpg" alt=" " class="img-responsive" />
+					</div>
+					<div class="agile_team_grid1">
+						
+							<label class="team-bar-w3"></label> <h4>Williamson</h4><label class="team-bar-w3"></label>
+							    <p class="para-agileits">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. </p>
+								    <ul class="top-icons team-icon">
+										<li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+										<li><a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
+										<li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+										<li><a href="#"><i class="fa fa-pinterest-p" aria-hidden="true"></i></a></li>
+								    </ul>
+					</div>
+				</div>
+				<div class="col-md-3 agile_team_grid">
+					<div class="agile_team_grid_main">
+						<img src="images/t3.jpg" alt=" " class="img-responsive" />
+					</div>
+					<div class="agile_team_grid1">
+							<label class="team-bar-w3"></label><h4>Rosy Paul</h4><label class="team-bar-w3"></label>
+							    <p class="para-agileits">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. </p>
+									<ul class="top-icons team-icon">
+										<li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+										<li><a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
+										<li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+										<li><a href="#"><i class="fa fa-pinterest-p" aria-hidden="true"></i></a></li>
+								    </ul>
+					</div>
+				</div>
+				<div class="col-md-3 agile_team_grid">
+					<div class="agile_team_grid_main">
+						<img src="images/t4.jpg" alt=" " class="img-responsive" />
+					</div>
+					<div class="agile_team_grid1">
+							 <label class="team-bar-w3"></label><h4>Jack</h4><label class="team-bar-w3"></label>
+							   <p class="para-agileits">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. </p>
+								    <ul class="top-icons team-icon">
+										<li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+										<li><a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
+										<li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+										<li><a href="#"><i class="fa fa-pinterest-p" aria-hidden="true"></i></a></li>
+								    </ul>
+					</div>
+				</div>
+				<div class="clearfix"> </div>
+			</div>
+		</div>
+	</div>
+<!-- //team -->
+
+
+ <!--/gallery-->
+ <div class="gallery" id="projects">
+	<div class="container">
+	<h3 class="tittle">Projects</h3>
+	<p class="title-para-w3-agileits">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+		<section id="gallery">
+					<div class="row">
+						<div class="col-md-4 col-sm-4 ggrids">
+							<a href="images/1.jpg" title="This is the description">
+							<img src="images/1.jpg" alt="" />
+								<div class="description">
+									<span class="caption">Project title</span> 
+									<span class="camera"></span>
+									<div class="clearfix"></div>
+								</div>
+							</a>
+						</div>			
+						<div class="col-md-4 col-sm-4 ggrids">
+							<a href="images/2.jpg" title="This is the description">
+							<img src="images/2.jpg" alt="" />
+								<div class="description">
+									<span class="caption">Project title</span> 
+									<span class="camera"></span>
+									<div class="clearfix"></div>
+								</div>
+							</a>
+						</div>
+						<div class="col-md-4 col-sm-4 ggrids">
+							<a href="images/3.jpg" title="This is the description">
+							<img src="images/3.jpg" alt="" />
+								<div class="description">
+									<span class="caption">Project title</span> 
+									<span class="camera"></span>
+									<div class="clearfix"></div>
+								</div>
+							</a>
+						</div>
+						<div class="col-md-4 col-sm-4 ggrids">
+							<a href="images/4.jpg" title="This is the description">
+							<img src="images/4.jpg" alt="" />
+								<div class="description">
+									<span class="caption">Project title</span> 
+									<span class="camera"></span>
+									<div class="clearfix"></div>
+								</div>
+							</a>
+						</div>
+						<div class="col-md-4 col-sm-4 ggrids">
+							<a href="images/5.jpg" title="This is the description">
+							<img src="images/5.jpg" alt="" />
+								<div class="description">
+									<span class="caption">Project title</span> 
+									<span class="camera"></span>
+									<div class="clearfix"></div>
+								</div>
+							</a>
+						</div>
+						<div class="col-md-4 col-sm-4 ggrids">
+							<a href="images/6.jpg" title="This is the description">
+							<img src="images/6.jpg" alt="" />
+								<div class="description">
+									<span class="caption">Project title</span> 
+									<span class="camera"></span>
+									<div class="clearfix"></div>
+								</div>
+							</a>
+						</div>
+						<div class="col-md-4 col-sm-4 ggrids">
+							<a href="images/7.jpg" title="This is the description">
+							<img src="images/7.jpg" alt="" />
+								<div class="description">
+									<span class="caption">Project title</span> 
+									<span class="camera"></span>
+									<div class="clearfix"></div>
+								</div>
+							</a>
+						</div>
+						<div class="col-md-4 col-sm-4 ggrids">
+							<a href="images/8.jpg" title="This is the description">
+							<img src="images/8.jpg" alt="" />
+								<div class="description">
+									<span class="caption">Project title</span> 
+									<span class="camera"></span>
+									<div class="clearfix"></div>
+								</div>
+							</a>
+						</div>
+						<div class="col-md-4 col-sm-4 ggrids last">
+							<a href="images/9.jpg" title="This is the description">
+							<img src="images/9.jpg" alt="" />
+								<div class="description">
+									<span class="caption">Project title</span> 
+									<span class="camera"></span>
+									<div class="clearfix"></div>
+								</div>
+							</a>
+						</div>
+					</div>	
+				</section>
+	</div>
+</div>
+<!--//gallery-->
+<!--contact-->
+<div class="contact-w3-agileits" id="contact">
+<div class="container">
+<h3 class="tittle">Our Contacts</h3>
+<p class="title-para-w3-agileits">Vestibulum commodo urna sit amet volutpat.</p>
+	<!---<div class="map-left-w3-agile">
+		<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d50100.48997179645!2d-76.53127244240966!3d38.29616554483137!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89b7622e038ee603%3A0x71219558c7232c0!2sCalifornia%2C+MD%2C+USA!5e0!3m2!1sen!2sin!4v1478498810487"></iframe>
+	</div>-->
+	<div class="address-right-w3ls">
+		<h5>Contacts</h5>
+		<label class="address-bar-w3"></label><h6>Address</h6>
+		<p>23046 Three Notch Road
+		California, MD 20619, USA</p>
+		<label class="address-bar-w3"></label><h6>Phone numbers</h6>
+		<p>+71(016)543-11-39</p>
+		<p>+71(015)543-11-39</p>
+		<p>+71(014)543-11-39</p>
+		<label class="address-bar-w3"></label><h6>Email</h6>
+		<p><a href="mailto:info@example.com">info@example.com</a></p>
+		<label class="address-bar-w3"></label><h6>Working hours</h6>
+		<p>Monday-Friday : 8am-6pm ;</p>
+		<p>Weekend : 10am-4pm ;</p>
+	</div>
+	<div class="clearfix"></div>
+	<div class="form">
+		<section class="content bgcolor-5">
+			<form action="#" method="post">
+				<span class="input input--minoru">
+					<input class="input__field input__field--yoko" type="text" id="input-16" required="" />
+					<label class="input__label input__label--yoko" for="input-16">
+						<span class="input__label-content input__label-content--yoko">Name</span>
+					</label>
+				</span>
+				<span class="input input--minoru">
+					<input class="input__field input__field--yoko" type="email" id="input-17" required="" />
+					<label class="input__label input__label--yoko" for="input-17">
+						<span class="input__label-content input__label-content--yoko">Email</span>
+					</label>
+				</span>
+				<span class="input input--minoru">
+					<input class="input__field input__field--yoko" type="text" id="input-18" required="" />
+					<label class="input__label input__label--yoko" for="input-18">
+						<span class="input__label-content input__label-content--yoko">Phone</span>
+					</label>
+				</span>
+				<textarea name="Message" placeholder="Message..." required="" ></textarea>
+						<input type="submit" value="Submit">
+			</form>
+		</section>
+	</div>
+</div>
+</div>
+
+<!--/contact -->
+<!--footer-->
+<div class="footer">
+		<div class="footer-content-agile">
+			<div class="col-md-3 about-us-agile">
+				<h4>about us</h4>
+					<div class="aboutus-right-wthree">
+						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In tempus sit amet ligula vel mollis. est sem nec Quisque nec lobortis augue, nec dictum ipsum.</p>
+						   
+					</div>
+			</div>
+			<div class="col-md-3 news-letter-agileits-w3layouts">
+				<h4>newsletter</h4>
+				<p>signup for our weekly newsletter and get the latest updates</p>
+					<form action="#" method="post">
+						<input type="email" name="Email" placeholder="Enter your Email" required="" />
+						<input type="submit" value="Subscribe" />
+					</form>
+			</div>
+			<div class="col-md-3 links-w3layouts">
+				<h4>Our links</h4>
+				<ul>
+					<li><a class="scroll active" href="#home"><span>Home</span></a></li> 
+					<li><a class="scroll" href="#services"><span>Services</span></a></li> 
+					<li><a class="scroll" href="#team"><span>Team</span></a></li> 
+					<li><a class="scroll" href="#projects"><span>Projects</span></a></li> 
+					<li><a class="scroll" href="#contact"><span>Contact</span></a></li> 
+										 
+				</ul>
+			</div>
+			<div class="col-md-3 footer-social-icons-agileinfo">
+			<h4>Social media</h4>
+				<ul>
+					<li><a href="#"><span><i class="fa fa-facebook" aria-hidden="true"></i></span>Facebook</a></li>
+					<li><a href="#"><span><i class="fa fa-google-plus" aria-hidden="true"></i></span> Google Plus</a></li>
+					<li><a href="#"><span><i class="fa fa-twitter" aria-hidden="true"></i></span> Twitter</a></li>
+					<li><a href="#"><span><i class="fa fa-pinterest-p" aria-hidden="true"> </i></span>Pinterest</a></li>
+				</ul>
+			</div>
+			<div class="clearfix"> </div>
+			<div class="copy">
+		        <p>Copyright &copy; 2017.Company name All rights reserved.<a target="_blank" href="http://sc.chinaz.com/moban/">&#x7F51;&#x9875;&#x6A21;&#x677F;</a></p>
+		    </div>
+		</div>
+</div>
+<!--/footer -->
+
+<!-- js -->
+<script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
+
+
+<!-- start-smoth-scrolling -->
+<script type="text/javascript" src="js/move-top.js"></script>
+<script type="text/javascript" src="js/easing.js"></script>
+<script type="text/javascript">
+	jQuery(document).ready(function($) {
+		$(".scroll").click(function(event){		
+			event.preventDefault();
+			$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+		});
+	});
+</script>
+<!-- start-smoth-scrolling -->
+<!--light-box-files -->
+<script src="js/jquery.chocolat.js"></script>
+<!--//light-box-files -->
+		<script type="text/javascript">
+		$(function() {
+			$('.gallery a').Chocolat();
+		});
+		</script>
+<!-- //js -->
+<script src="js/responsiveslides.min.js"></script>
+		<script>
+				$(function () {
+					$("#slider").responsiveSlides({
+						auto: true,
+						pager: true,
+						nav: true,
+						speed: 1000,
+						namespace: "callbacks",
+						before: function () {
+							$('.events').append("<li>before event fired.</li>");
+						},
+						after: function () {
+							$('.events').append("<li>after event fired.</li>");
+						}
+					});
+				});
+			</script>
+		
+		<!--search-bar-->
+		<script src="js/main.js"></script>	
+<!--//search-bar-->
+<!-- smooth scrolling -->
+	<script type="text/javascript">
+		$(document).ready(function() {
+		/*
+			var defaults = {
+			containerID: 'toTop', // fading element id
+			containerHoverID: 'toTopHover', // fading element hover id
+			scrollSpeed: 1200,
+			easingType: 'linear' 
+			};
+		*/								
+		$().UItoTop({ easingType: 'easeOutQuart' });
+		});
+	</script>
+	
+	
+	<a href="#home" id="toTop" style="display: block;"> <span id="toTopHover" style="opacity: 1;"> </span></a>
+<!-- //smooth scrolling -->
+<script type="text/javascript" src="js/bootstrap-3.1.1.min.js"></script>
+
+</body>
 </html>
