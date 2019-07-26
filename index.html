@@ -15,6 +15,7 @@
     <div id="app">
         <h1>欢迎来到tscheung的博客主页</h1>
         <h3><h3 v-color="'red'" v-fontweight="800" v-fontsize="20">现在是 北京时间 {{  dt | dateFormat('')}}  星期 {{week}}</h3></h3>
+        <h2>{{souvenir}}</h2>
     </div>
     <script>
 
@@ -23,10 +24,30 @@
 
             data:{
                 dt:new Date(),
-                week : new Date().getDay()
+                week : new Date().getDay(),
+                souvenir: '我爱李莎曼小乖乖'
+            },
+            created(){
+                this.lang()
             },
             methods:{
+                lang(){
+                // console.log(this.msg)
+                //获取到头的第一格字符
+                if(this.intervalId!=null)return;
+                var _this = this
 
+                //这里可以简写成setInterval( () => {
+                this.intervalId = setInterval(function(){
+                    var start = _this.msg.substring(0, 1)
+                    //获取到后面的所有字符
+                    var end = _this.msg.substring(1)
+                    //重新拼接得到新的字符串，并赋值给 _this.msg
+                    _this.msg = end + start
+                }, 400)
+                //VM实例会监听自己的所有改变,只要一发生改动就会自动把最新的数据从data上同步到页面中去
+                //【好处： 程序员只需要关心数据，不需要考虑如何重新渲染DOM】
+                },
             },
             filters:{//定义私有过滤器 有两个条件 【过滤器名称 和 处理函数】
                 dateFormat : function(dateStr, pattern=''){
