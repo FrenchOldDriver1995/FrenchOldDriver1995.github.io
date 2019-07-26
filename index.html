@@ -16,6 +16,7 @@
         <h1>欢迎来到tscheung的博客主页</h1>
         <h3><h3 v-color="'red'" v-fontweight="800" v-fontsize="20">现在是 北京时间 {{  dt | dateFormat('')}}  星期 {{week}}</h3></h3>
         <h2>{{souvenir}}</h2>
+        <input type="button" value="点击这里" @click="lang">
     </div>
     <script>
 
@@ -25,7 +26,8 @@
             data:{
                 dt:new Date(),
                 week : new Date().getDay(),
-                souvenir: '我爱李莎曼小乖乖'
+                souvenir: '我爱李沙蔓小乖乖',
+                intervalId: null
             },
             created(){
                 this.lang()
