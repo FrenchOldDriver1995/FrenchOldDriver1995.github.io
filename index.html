@@ -8,14 +8,20 @@
     <title>githubTemplate</title>
     <link rel="stylesheet" href="">
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-    
+    <link href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+ 
+    <!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+    <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+ 
+    <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+    <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
     </body>
 </head>
 
 <body>
 
 
-    <body style="background-image: url(./res/paris.jpg); background-size: 100%;"></body>
+    <!-- <body style="background-image: url(./res/paris.jpg); background-size: 100%;"></body> -->
     <div id="app">
         <h1>欢迎来到Tscheung的博客主页</h1>
         <h3><h3 v-color="'red'" v-fontweight="800" v-fontsize="20">现在是 北京时间 {{  dt | dateFormat('')}}  星期 {{week}}</h3></h3>
