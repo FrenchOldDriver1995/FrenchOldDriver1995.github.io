@@ -8,13 +8,20 @@
     <title>githubTemplate</title>
     <link rel="stylesheet" href="">
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-    <link href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <!-- <link href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"> -->
  
+	<link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+	<link href="css/font-awesome.min.css" rel="stylesheet" type="text/css" media="all">
+	<link rel="stylesheet" href="css/chocolat.css" type="text/css" media="screen">
+	<link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
+	<!--fonts-->
+	<link href="http://fonts.googleapis.com/css?family=Noto+Sans:400,700" rel="stylesheet">
+	<link href="http://fonts.googleapis.com/css?family=Lato:300,400,700,900" rel="stylesheet">
     <!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
     <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
  
     <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
-	<script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<!-- <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script> -->
 	<!-- 实时显示时间 -->
 	<script type="text/javascript">
 		function showTime(){
@@ -26,21 +33,42 @@
 		}
 		setInterval("shouTime()",1000)
 	</script>
-    </body>
+
+	<style>
+
+		.demo1{
+			width: 500px;
+			height: 300px;
+			line-height: 50px;
+			text-align: center
+		}
+
+		.demo1:before{
+			background:url(./res/shanghai.jpg) no-repeat;
+			background-size:cover;
+			position: absolute;
+			top:0;
+			left:0;
+			z-index: -1; 
+			/* 这个-1表示可以当背景 */
+			-webkit-filter:blur(3px);
+			filter:blur(3px);
+		}
+	</style>
 </head>
 
 <body>
 
 
 	
-	<body style="background-image: url(./res/paris.jpg); background-size: 50%;"></body>
+	<body style="background-image: url(./res/shanghai.jpg); background-size: 50%;"></body>
 	
 	<div id="app">
         <h1>欢迎来到Tscheung的博客主页</h1>
 		<h3><h3 v-color="'red'" v-fontweight="800" v-fontsize="20">现在是 北京时间 {{  dt | dateFormat('')}}  星期 {{week}}</h3></h3>
 		
         <p>{{msg}}</p>
-        <input type="button" value="点击这里" @click="lang">
+        <!-- <input type="button" value="点击这里" @click="lang"> -->
         <a href="http://www.baidu.com">跳转到百度</a>
         <a href="http://www.taobao.com">跳转到淘宝</a>
 	</div>
