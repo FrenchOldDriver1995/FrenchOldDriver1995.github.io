@@ -10,6 +10,11 @@
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <!-- <link href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"> -->
  
+	<!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+	<script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+	
+	<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
+		function hideURLbar(){ window.scrollTo(0,1); } </script>
 	<link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
 	<link href="css/font-awesome.min.css" rel="stylesheet" type="text/css" media="all">
 	<link rel="stylesheet" href="css/chocolat.css" type="text/css" media="screen">
@@ -17,8 +22,7 @@
 	<!--fonts-->
 	<link href="http://fonts.googleapis.com/css?family=Noto+Sans:400,700" rel="stylesheet">
 	<link href="http://fonts.googleapis.com/css?family=Lato:300,400,700,900" rel="stylesheet">
-    <!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
-    <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+    
  
     <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
 	<!-- <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script> -->
@@ -54,31 +58,140 @@
 			-webkit-filter:blur(3px);
 			filter:blur(3px);
 		}
+		/* .mybgc{
+			background-color: rgba(255,255,255,0.1 );
+		} */
 	</style>
 </head>
 
 <body>
-
-
 	
-	<body style="background-image: url(./res/shanghai.jpg); background-size: 50%;"></body>
-	
-	<div id="app">
-        <h1>欢迎来到Tscheung的博客主页</h1>
-		<h3><h3 v-color="'red'" v-fontweight="800" v-fontsize="20">现在是 北京时间 {{  dt | dateFormat('')}}  星期 {{week}}</h3></h3>
-		
-        <p>{{msg}}</p>
-        <!-- <input type="button" value="点击这里" @click="lang"> -->
-        <a href="http://www.baidu.com">跳转到百度</a>
-        <a href="http://www.taobao.com">跳转到淘宝</a>
-	</div>
 	
 	<span id="mytime"></span>
+
+	<div class="header" id="home">
+			<!--Top-Bar-->
+					<div class="top-bar">
+					<div class="container-fluid">
+						<div class="header-nav">
+							<nav class="navbar navbar-default">
+								<!-- Brand and toggle get grouped for better mobile display -->
+								<div class="navbar-header">
+									<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+										<span class="sr-only">Toggle navigation</span>
+										<span class="icon-bar"></span>
+										<span class="icon-bar"></span>
+										<span class="icon-bar"></span>
+									</button>
+									<h1><a class="navbar-brand" href="index.html">老公和小猪的❤️ <span>专区</span></a></h1>
+								</div>
+								<!-- Collect the nav links, forms, and other content for toggling -->
+								<div class="collapse navbar-collapse nav-wil" id="bs-example-navbar-collapse-1">
+									<nav class="cl-effect-15" id="cl-effect-15">
+									<ul>
+										<li><a href="#home" class="active" data-hover="Home">Home</a></li>
+										<li><a href="#About" class="scroll" data-hover="About">About</a></li>
+										<li><a href="#services" class="scroll" data-hover="Services">Services</a></li>
+										<li><a href="#Team" class="scroll" data-hover="Team">Team</a></li>
+										<li><a href="#projects" class="scroll" data-hover="Projects">Projects</a></li>
+										<li><a href="#contact" class="scroll" data-hover="Contact">Contact</a></li>
+									</ul>
+									</nav>
+								</div>
+								<div class="agileits-contact-info text-right">
+								<ul>
+									<li><span class="glyphicon glyphicon-earphone" aria-hidden="true"></span>
+										</li>
+										<div id="app">
+        
+												<!-- <h3><h3 v-color="'red'" v-fontweight="800" v-fontsize="20">现在是 北京时间 {{  dt | dateFormat('')}}  星期 {{week}}</h3></h3> -->
+												<input type="button" value="点击有惊喜" @click="chuxian">
+												<h1 id="yincang" style="display: none">{{msg}}</h1>
+												<!-- <input type="button" value="点击这里" @click="lang"> -->
+										
+											</div>
+								</ul>
+							</div>
+							</nav>
+
+						</div>
+						</div>
+				</div>
+			<!--//Top-Bar-->
+			<!--Slider-->
+			<div class="slider">
+				<div class="callbacks_container">
+					<ul class="rslides" id="slider">
+						<li>
+							<div class="slider-img">
+								<img src="res/disney5.jpg" class="img-responsive" alt="Trade Zone">
+							</div>
+							<div class="slider-info">
+								<img src="res/heart.png" class="img-responsive" alt="logo">
+								<h3 style="color: black">"迪斯尼太好玩了吧😂"</h3>
+								<p style="color: black">"老公快给我拍照"</p>
+							</div>
+						</li>
+						<li>
+							<div class="slider-img">
+								<img src="res/disney6.jpg" class="img-responsive" alt="Trade Zone">
+							</div>
+							<div class="slider-info">
+								<img src="res/heart.png" class="img-responsive" alt="logo">
+								<h3 style="color: black">"这是什么东东"</h3>
+								<p style="color: black">"我也想上去玩！" </p>
+							</div>
+						</li>
+						<li>
+							<div class="slider-img">
+								<img src="res/disney3.jpg" class="img-responsive" alt="Trade Zone">
+							</div>
+							<div class="slider-info">
+								<img src="res/heart.png" class="img-responsive" alt="logo">
+								<h3 style="color: black">天底下最闪亮✨的girl</h3>
+								<p style="color: black">"看我的大长腿～"</p>
+							</div>
+						</li>
+						<li>
+							<div class="slider-img">
+								<img src="res/disney7.jpg" class="img-responsive" alt="Trade Zone">
+							</div>
+							<div class="slider-info">
+								<img src="res/heart.png" class="img-responsive" alt="logo">
+								<h3 style="color: black">"我真是个仙女"</h3>
+								<p style="color: black">"美到天上去了"</p>
+							</div>
+						</li>
+	
+					</ul>
+					
+				</div>
+				<div class="clearfix"></div>
+			</div>
+			<!-- <div class="readmore-w3"><a class="readmore" href="#" data-toggle="modal" data-target="#myModal1">Read More</a></div> -->
+			<div class="modal fade" id="myModal1" tabindex="-1" role="dialog">
+							<!-- Modal1 -->
+								<div class="modal-dialog">
+								<!-- Modal content-->
+									<div class="modal-content">
+										<div class="modal-header">
+											<button type="button" class="close" data-dismiss="modal">&times;</button>
+											<h4>Trade Zone</h4>
+											<img src="images/bann2.jpg" alt=" " class="img-responsive">
+											<h5>Lorem Ipsum</h5>
+											<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting.</p>
+										</div>
+									</div>
+								</div>
+							</div>
+							<!-- //Modal1 -->
+			<!--//Slider-->
+		</div>
 
     <div class="about" id="about">
 		<div class="container">
 					<h3 class="tittle">La vie n'est pas que vivre</h3>
-						<p class="title-para-w3-agileits">Love you three thousands times</p>
+						<p class="title-para-w3-agileits">Je t'aime trois milles fois</p>
 						<div class="w3l-grids-about">
 								<div class="col-md-5 w3ls-ab-right">
 									<div class="agile-about-right-img">
@@ -86,7 +199,7 @@
 								</div>
 								<div class="col-md-7 w3ls-agile-left">
 									<h2>和小蔓蔓去上海玩</h2>
-                                    <p>今天和小蔓蔓去上海度过了开心的周末时光，在迪斯尼嗨皮了一天之后，第二天坐在黄浦江边品味下午茶</p>
+                                    <p>终于见到了许久未见（半个月啦！一日不见如隔三秋！）的乖宝宝，于是打算带她度过一段愉快浪漫的上海之旅。虽然只有短短两天时间，但意义却不同非凡，因为这是我们第一次同时到上海，也是我们第一次一起去迪斯尼！在迪斯尼疯狂嗨皮了一天，超级累，太阳晒哭了～～于是乎第二天决定放松一下，坐在黄浦江边品味悠闲的下午茶</p>
 										<!-- <a href="#" data-toggle="modal" data-target="#myModal2" class="read">Read More</a> -->
 								</div>
 								<div class="clearfix"> </div>
@@ -137,8 +250,8 @@
 						<img src="./res/disney3.jpg" alt=" " class="img-responsive" />
 					</div>
 					<div class="agile_team_grid1">
-							 <label class="team-bar-w3"></label><h4>在迪斯尼玩的真开心</h4><label class="team-bar-w3"></label>
-							   <p class="para-agileits">这是谁家的傻宝宝</p>
+							 <label class="team-bar-w3"></label><h4>迪斯尼Girl</h4><label class="team-bar-w3"></label>
+							   <p class="para-agileits" color>这是谁家的傻宝宝</p>
 								    <ul class="top-icons team-icon">
 										<li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
 										<li><a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
@@ -154,6 +267,72 @@
 	</div>
 	<script src="./main.js"></script>
 
+	<!-- js -->
+<script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
+
+
+<!-- start-smoth-scrolling -->
+<script type="text/javascript" src="js/move-top.js"></script>
+<script type="text/javascript" src="js/easing.js"></script>
+<script type="text/javascript">
+	jQuery(document).ready(function($) {
+		$(".scroll").click(function(event){		
+			event.preventDefault();
+			$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+		});
+	});
+</script>
+<!-- start-smoth-scrolling -->
+<!--light-box-files -->
+<script src="js/jquery.chocolat.js"></script>
+<!--//light-box-files -->
+		<script type="text/javascript">
+		$(function() {
+			$('.gallery a').Chocolat();
+		});
+		</script>
+<!-- //js -->
+<script src="js/responsiveslides.min.js"></script>
+		<script>
+				$(function () {
+					$("#slider").responsiveSlides({
+						auto: true,
+						pager: true,
+						nav: true,
+						speed: 1000,
+						namespace: "callbacks",
+						before: function () {
+							$('.events').append("<li>before event fired.</li>");
+						},
+						after: function () {
+							$('.events').append("<li>after event fired.</li>");
+						}
+					});
+				});
+			</script>
+		
+		<!--search-bar-->
+		<script src="js/main.js"></script>	
+<!--//search-bar-->
+<!-- smooth scrolling -->
+	<script type="text/javascript">
+		$(document).ready(function() {
+		/*
+			var defaults = {
+			containerID: 'toTop', // fading element id
+			containerHoverID: 'toTopHover', // fading element hover id
+			scrollSpeed: 1200,
+			easingType: 'linear' 
+			};
+		*/								
+		$().UItoTop({ easingType: 'easeOutQuart' });
+		});
+	</script>
+	
+	
+	<a href="#home" id="toTop" style="display: block;"> <span id="toTopHover" style="opacity: 1;"> </span></a>
+<!-- //smooth scrolling -->
+<script type="text/javascript" src="js/bootstrap-3.1.1.min.js"></script>
 </body>
 
 </html>

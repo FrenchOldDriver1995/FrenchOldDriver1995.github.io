@@ -4,7 +4,7 @@ var vm=new Vue({
     data:{
         dt:new Date(),
         week : new Date().getDay(),
-        msg: '我爱李沙蔓小乖乖',
+        msg: '我爱李沙蔓小乖乖,今天是在一起的第330天，耶✌️～～～',
         intervalId: null
     },
     created(){
@@ -28,6 +28,9 @@ var vm=new Vue({
         //VM实例会监听自己的所有改变,只要一发生改动就会自动把最新的数据从data上同步到页面中去
         //【好处： 程序员只需要关心数据，不需要考虑如何重新渲染DOM】
         },
+        chuxian(){
+            document.getElementById("yincang").style="dispaly:true"
+        }
     },
     filters:{//定义私有过滤器 有两个条件 【过滤器名称 和 处理函数】
         dateFormat : function(dateStr, pattern=''){
