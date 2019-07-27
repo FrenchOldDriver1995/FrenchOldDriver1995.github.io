@@ -4,7 +4,7 @@ var vm=new Vue({
     data:{
         dt:new Date(),
         week : new Date().getDay(),
-        msg: '我爱李沙蔓小乖乖,今天是在一起的第330天，耶✌️～～～',
+        msg: '我爱蔓宝宝,在一起已经330天啦，耶✌️～～～',
         intervalId: null
     },
     created(){
