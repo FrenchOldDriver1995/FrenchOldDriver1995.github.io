@@ -32,16 +32,21 @@
 <body>
 
 
-    <!-- <body style="background-image: url(./res/paris.jpg); background-size: 100%;"></body> -->
-    <div id="app">
+	
+	<body style="background-image: url(./res/paris.jpg); background-size: 50%;"></body>
+	
+	<div id="app">
         <h1>欢迎来到Tscheung的博客主页</h1>
 		<h3><h3 v-color="'red'" v-fontweight="800" v-fontsize="20">现在是 北京时间 {{  dt | dateFormat('')}}  星期 {{week}}</h3></h3>
-		<span id="mytime"></span>
+		
         <p>{{msg}}</p>
         <input type="button" value="点击这里" @click="lang">
         <a href="http://www.baidu.com">跳转到百度</a>
         <a href="http://www.taobao.com">跳转到淘宝</a>
-    </div>
+	</div>
+	
+	<span id="mytime"></span>
+
     <div class="about" id="about">
 		<div class="container">
 					<h3 class="tittle">La vie n'est pas que vivre</h3>
@@ -63,7 +68,7 @@
     <div class="team" id="team">
 		<div class="container">
 			<h3 class="tittle">Photo view</h3>
-			<p class="title-para-w3-agileits">美丽的小蔓蔓</p>
+			<p class="title-para-w3-agileits">美丽的小猪</p>
 			<div class="agile_team_grids">
 
 
@@ -82,6 +87,39 @@
 								    </ul>
 					</div>
 				</div>
+
+				<div class="col-md-3 col-md-offset-9 agile_team_grid">
+					<div class="agile_team_grid_main">
+						<img src="./res/disney2.jpg" alt=" " class="img-responsive" />
+					</div>
+					<div class="agile_team_grid1">
+							 <label class="team-bar-w3"></label><h4>饲养员和小猪</h4><label class="team-bar-w3"></label>
+							   <p class="para-agileits">❤️</p>
+								    <ul class="top-icons team-icon">
+										<li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+										<li><a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
+										<li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+										<li><a href="#"><i class="fa fa-pinterest-p" aria-hidden="true"></i></a></li>
+								    </ul>
+					</div>
+				</div>
+
+				<div class="col-md-3 agile_team_grid">
+					<div class="agile_team_grid_main">
+						<img src="./res/disney3.jpg" alt=" " class="img-responsive" />
+					</div>
+					<div class="agile_team_grid1">
+							 <label class="team-bar-w3"></label><h4>在迪斯尼玩的真开心</h4><label class="team-bar-w3"></label>
+							   <p class="para-agileits">这是谁家的傻宝宝</p>
+								    <ul class="top-icons team-icon">
+										<li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+										<li><a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
+										<li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+										<li><a href="#"><i class="fa fa-pinterest-p" aria-hidden="true"></i></a></li>
+								    </ul>
+					</div>
+				</div>
+
 				<div class="clearfix"> </div>
 			</div>
 		</div>
